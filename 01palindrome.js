@@ -12,5 +12,10 @@ isPalindrome("angel") // return: false
 */
 
 function isPalindrome(word) {
+    let inverted = word.split("").reverse.join("");
 
+    return (inverted === word);
 }
+
+console.log(isPalindrome("otto")); // return: true
+console.log(isPalindrome("angel")); //return: false
