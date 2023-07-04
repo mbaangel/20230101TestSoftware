@@ -11,11 +11,45 @@ isPalindrome("angel") // return: false
 
 */
 
+// Solution 1 javascript
+/*
 function isPalindrome(word) {
-    let inverted = word.split("").reverse.join("");
+    let inverted = word.split("").reverse().join("");
 
     return (inverted === word);
 }
 
 console.log(isPalindrome("otto")); // return: true
 console.log(isPalindrome("angel")); //return: false
+*/
+
+// Solution 2 control structures
+
+/* 
+
+function isPalindrome (word){
+    // Split the string into an array of letters
+    let letters = [];
+    for (let i = 0; i < word.length; i++) {
+        letters.push(word[i]);
+    }
+
+    // Invert into array with a loop
+    let invertedLetters = [];
+    for (let i = letters.length - 1; i >= 0; i--) {
+        invertedLetters.push(letters[i]);
+    }
+
+    // Join all the array letters with a loop and save the result in a variable
+    let invertedWord = "";
+    for (let i = 0; i < invertedLetters.length; i++) {
+        invertedWord += invertedLetters[i];
+    }
+
+    // return the result
+    return (word === invertedWord);
+}
+
+console.log(isPalindrome("otto")); // return: true
+console.log(isPalindrome("angel")); //return: false
+*/
