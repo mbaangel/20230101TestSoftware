@@ -11,3 +11,6 @@ isPalindrome("angel") // return: false
 
 */
 
+function isPalindrome(word) {
+
+}
