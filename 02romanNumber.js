@@ -4,7 +4,7 @@
 
 - Create a function that converts a roman numeral to decimal.
 
-romanInteger("XVIII")   // 18
+romanInteger("MCMLXXXVII")   // 1987
 romanInteger("CXX")     // 120
 
 */
@@ -17,7 +17,7 @@ function romanInteger(roman){
         CM: 900,
         D: 500,
         CD: 400,
-        C: 100;
+        C: 100,
         XC: 90,
         L: 50,
         XL: 40,
@@ -32,14 +32,24 @@ function romanInteger(roman){
     let result = 0;
 
     // Scroll roman numeral letter by letter
-    for(let i = 0; i < roman)
+    for(let i = 0; i < roman.length; i++){
+        // Value test
+        //console.log(roman[i], romanTable[roman[i]]);
+    
 
     //If the current letter is the last or the value of the next character is less than or equal to the current one, then we add the value to the result
-
-
+    if(i === roman.length - 1  || 
+        romanTable[roman[i + 1]] <= romanTable [roman[i]]){
+        result += romanTable[roman[i]];
+        }else{
     // If not, subtract the value of the current letter from the result
+              result -= romanTable[roman[i]];
 
-
+        }
+    }
     // return the result
     return result;
 }
+
+console.log(romanInteger("MCMLXXXVII"))   // 1987
+//console.log(romanInteger("CXX"))   // 120
