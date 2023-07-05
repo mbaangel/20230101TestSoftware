@@ -10,8 +10,10 @@ romanInteger("CXX")     // 120
 */
 
 function romanInteger(roman){
-    // Create table with corresponding numerical values
+    // Prompt the user to enter a Roman numeral
+    const roman = prompt("Enter a Roman numeral:");
 
+    // Create table with corresponding numerical values
     const romanTable = {
         M: 1000,
         CM: 900,
@@ -48,8 +50,7 @@ function romanInteger(roman){
         }
     }
     // return the result
-    return result;
+    console.log("The equivalent decimal number is:", result);
 }
 
-console.log(romanInteger("MCMLXXXVII"))   // 1987
-//console.log(romanInteger("CXX"))   // 120
+romanInteger();
